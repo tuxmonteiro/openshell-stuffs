@@ -1,0 +1,27 @@
+id: profile-api-x-ai
+display_name: xAI (api.x.ai)
+description: Access to the xAI endpoint (api.x.ai)
+category: inference
+inference_capable: true
+credentials:
+- name: xai_api_key
+  description: xAI API key
+  env_vars:
+  - XAI_API_KEY
+  required: false
+  auth_style: bearer
+  header_name: authorization
+  query_param: ''
+endpoints:
+- host: api.x.ai
+  port: 443
+  path: /**
+  protocol: rest
+  access: read-write
+  enforcement: enforce
+  credentials:
+  - xai_api_key
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
+- /usr/bin/curl

@@ -1,0 +1,20 @@
+id: profile-host-docker-internal
+display_name: Gateway (host.docker.internal)
+description: Access to the gateway endpoint (host.docker.internal)
+category: inference
+inference_capable: true
+endpoints:
+- host: host.docker.internal
+  port: 20128
+  protocol: rest
+  rules:
+  - allow:
+      method: GET
+      path: /login
+  - allow:
+      method: GET
+      path: /v1/**
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
+- /usr/bin/curl

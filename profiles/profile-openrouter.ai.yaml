@@ -1,0 +1,27 @@
+id: profile-openrouter-ai
+display_name: OpenRouter (openrouter.ai)
+description: Access to the OpenRouter endpoint (openrouter.ai)
+category: inference
+inference_capable: true
+credentials:
+- name: openrouter_api_key
+  description: OpenRouter API key
+  env_vars:
+  - OPENROUTER_API_KEY
+  required: false
+  auth_style: bearer
+  header_name: authorization
+  query_param: ''
+endpoints:
+- host: openrouter.ai
+  port: 443
+  path: /**
+  protocol: rest
+  access: read-write
+  enforcement: enforce
+  credentials:
+  - openrouter_api_key
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
+- /usr/bin/curl

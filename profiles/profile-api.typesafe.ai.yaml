@@ -1,0 +1,27 @@
+id: profile-api-typesafe-ai
+display_name: TypeSafe (api.typesafe.ai)
+description: Access to the TypeSafe endpoint (api.typesafe.ai)
+category: inference
+inference_capable: true
+credentials:
+- name: typesafe_api_key
+  description: TypeSafe API key
+  env_vars:
+  - TYPESAFE_API_KEY
+  required: false
+  auth_style: bearer
+  header_name: authorization
+  query_param: ''
+endpoints:
+- host: api.typesafe.ai
+  port: 443
+  path: /**
+  protocol: rest
+  access: read-write
+  enforcement: enforce
+  credentials:
+  - typesafe_api_key
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
+- /usr/bin/curl

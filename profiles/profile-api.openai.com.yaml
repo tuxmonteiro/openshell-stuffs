@@ -1,0 +1,27 @@
+id: profile-api-openai-com
+display_name: OpenAI (api.openai.com)
+description: Access to the OpenAI endpoint (api.openai.com)
+category: inference
+inference_capable: true
+credentials:
+- name: openai_api_key
+  description: OpenAI API key
+  env_vars:
+  - OPENAI_API_KEY
+  required: false
+  auth_style: bearer
+  header_name: authorization
+  query_param: ''
+endpoints:
+- host: api.openai.com
+  port: 443
+  path: /**
+  protocol: rest
+  access: read-write
+  enforcement: enforce
+  credentials:
+  - openai_api_key
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
+- /usr/bin/curl

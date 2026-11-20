@@ -1,0 +1,27 @@
+id: profile-api-siliconflow-cn
+display_name: SiliconFlow (api.siliconflow.cn)
+description: Access to the SiliconFlow endpoint (api.siliconflow.cn)
+category: inference
+inference_capable: true
+credentials:
+- name: siliconflow_api_key
+  description: SiliconFlow API key
+  env_vars:
+  - SILICONFLOW_API_KEY
+  required: false
+  auth_style: bearer
+  header_name: authorization
+  query_param: ''
+endpoints:
+- host: api.siliconflow.cn
+  port: 443
+  path: /**
+  protocol: rest
+  access: read-write
+  enforcement: enforce
+  credentials:
+  - siliconflow_api_key
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
+- /usr/bin/curl

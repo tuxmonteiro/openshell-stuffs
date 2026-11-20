@@ -1,0 +1,20 @@
+id: profile-host-openshell-internal
+display_name: Gateway (host.openshell.internal)
+description: Access to the gateway endpoint (host.openshell.internal)
+category: inference
+inference_capable: true
+endpoints:
+- host: host.openshell.internal
+  port: 20128
+  protocol: rest
+  rules:
+  - allow:
+      method: GET
+      path: /login
+  - allow:
+      method: GET
+      path: /v1/**
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
+- /usr/bin/curl

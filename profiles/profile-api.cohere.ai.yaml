@@ -1,0 +1,27 @@
+id: profile-api-cohere-ai
+display_name: Cohere (api.cohere.ai)
+description: Access to the Cohere endpoint (api.cohere.ai)
+category: inference
+inference_capable: true
+credentials:
+- name: cohere_api_key
+  description: Cohere API key
+  env_vars:
+  - COHERE_API_KEY
+  required: false
+  auth_style: bearer
+  header_name: authorization
+  query_param: ''
+endpoints:
+- host: api.cohere.ai
+  port: 443
+  path: /**
+  protocol: rest
+  access: read-write
+  enforcement: enforce
+  credentials:
+  - cohere_api_key
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
+- /usr/bin/curl

@@ -1,0 +1,27 @@
+id: profile-api-perplexity-ai
+display_name: Perplexity (api.perplexity.ai)
+description: Access to the Perplexity endpoint (api.perplexity.ai)
+category: inference
+inference_capable: true
+credentials:
+- name: perplexity_api_key
+  description: Perplexity API key
+  env_vars:
+  - PERPLEXITY_API_KEY
+  required: false
+  auth_style: bearer
+  header_name: authorization
+  query_param: ''
+endpoints:
+- host: api.perplexity.ai
+  port: 443
+  path: /**
+  protocol: rest
+  access: read-write
+  enforcement: enforce
+  credentials:
+  - perplexity_api_key
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
+- /usr/bin/curl

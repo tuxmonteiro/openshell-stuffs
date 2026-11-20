@@ -1,0 +1,27 @@
+id: profile-api-deepinfra-com
+display_name: DeepInfra (api.deepinfra.com)
+description: Access to the DeepInfra endpoint (api.deepinfra.com)
+category: inference
+inference_capable: true
+credentials:
+- name: deepinfra_api_key
+  description: DeepInfra API key
+  env_vars:
+  - DEEPINFRA_API_KEY
+  required: false
+  auth_style: bearer
+  header_name: authorization
+  query_param: ''
+endpoints:
+- host: api.deepinfra.com
+  port: 443
+  path: /**
+  protocol: rest
+  access: read-write
+  enforcement: enforce
+  credentials:
+  - deepinfra_api_key
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
+- /usr/bin/curl

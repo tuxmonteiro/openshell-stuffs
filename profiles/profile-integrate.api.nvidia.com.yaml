@@ -1,0 +1,27 @@
+id: profile-integrate-api-nvidia-com
+display_name: NVIDIA NIM (integrate.api.nvidia.com)
+description: Access to the NVIDIA NIM endpoint (integrate.api.nvidia.com)
+category: inference
+inference_capable: true
+credentials:
+- name: nvidia_api_key
+  description: NVIDIA NIM API key
+  env_vars:
+  - NVIDIA_API_KEY
+  required: false
+  auth_style: bearer
+  header_name: authorization
+  query_param: ''
+endpoints:
+- host: integrate.api.nvidia.com
+  port: 443
+  path: /**
+  protocol: rest
+  access: read-write
+  enforcement: enforce
+  credentials:
+  - nvidia_api_key
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
+- /usr/bin/curl

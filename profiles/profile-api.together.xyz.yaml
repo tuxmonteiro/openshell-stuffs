@@ -1,0 +1,27 @@
+id: profile-api-together-xyz
+display_name: Together AI (api.together.xyz)
+description: Access to the Together AI endpoint (api.together.xyz)
+category: inference
+inference_capable: true
+credentials:
+- name: together_api_key
+  description: Together AI API key
+  env_vars:
+  - TOGETHER_API_KEY
+  required: false
+  auth_style: bearer
+  header_name: authorization
+  query_param: ''
+endpoints:
+- host: api.together.xyz
+  port: 443
+  path: /**
+  protocol: rest
+  access: read-write
+  enforcement: enforce
+  credentials:
+  - together_api_key
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
+- /usr/bin/curl

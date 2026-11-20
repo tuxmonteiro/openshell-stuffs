@@ -1,0 +1,27 @@
+id: profile-api-anthropic-com
+display_name: Anthropic (api.anthropic.com)
+description: Access to the Anthropic endpoint (api.anthropic.com)
+category: inference
+inference_capable: true
+credentials:
+- name: anthropic_api_key
+  description: Anthropic API key
+  env_vars:
+  - ANTHROPIC_API_KEY
+  required: false
+  auth_style: bearer
+  header_name: authorization
+  query_param: ''
+endpoints:
+- host: api.anthropic.com
+  port: 443
+  path: /**
+  protocol: rest
+  access: read-write
+  enforcement: enforce
+  credentials:
+  - anthropic_api_key
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
+- /usr/bin/curl

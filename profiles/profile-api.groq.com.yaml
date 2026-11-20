@@ -1,0 +1,27 @@
+id: profile-api-groq-com
+display_name: Groq (api.groq.com)
+description: Access to the Groq endpoint (api.groq.com)
+category: inference
+inference_capable: true
+credentials:
+- name: groq_api_key
+  description: Groq API key
+  env_vars:
+  - GROQ_API_KEY
+  required: false
+  auth_style: bearer
+  header_name: authorization
+  query_param: ''
+endpoints:
+- host: api.groq.com
+  port: 443
+  path: /**
+  protocol: rest
+  access: read-write
+  enforcement: enforce
+  credentials:
+  - groq_api_key
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
+- /usr/bin/curl

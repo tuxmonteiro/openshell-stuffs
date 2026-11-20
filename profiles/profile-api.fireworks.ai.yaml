@@ -1,0 +1,27 @@
+id: profile-api-fireworks-ai
+display_name: Fireworks AI (api.fireworks.ai)
+description: Access to the Fireworks AI endpoint (api.fireworks.ai)
+category: inference
+inference_capable: true
+credentials:
+- name: fireworks_api_key
+  description: Fireworks AI API key
+  env_vars:
+  - FIREWORKS_API_KEY
+  required: false
+  auth_style: bearer
+  header_name: authorization
+  query_param: ''
+endpoints:
+- host: api.fireworks.ai
+  port: 443
+  path: /**
+  protocol: rest
+  access: read-write
+  enforcement: enforce
+  credentials:
+  - fireworks_api_key
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
+- /usr/bin/curl
