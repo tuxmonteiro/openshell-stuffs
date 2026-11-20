@@ -1,6 +1,6 @@
 # openshell-stuffs
 
-My OpenShell profiles and scripts - network-proxy profiles for AI/inference endpoints, plus helpers to import, create providers for, and clean them up from OpenShell.
+My OpenShell profiles and scripts: network-proxy profiles for AI/inference endpoints, plus helpers to import, create providers for, and clean them up from OpenShell.
 
 ## What's inside
 
