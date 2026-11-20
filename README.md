@@ -1,6 +1,6 @@
 # openshell-stuffs
 
-My OpenShell profiles and scripts — network-proxy profiles for AI/inference endpoints, plus helpers to import, create providers for, and clean them up from OpenShell.
+My OpenShell profiles and scripts - network-proxy profiles for AI/inference endpoints, plus helpers to import, create providers for, and clean them up from OpenShell.
 
 ## What's inside
 
@@ -39,7 +39,7 @@ My OpenShell profiles and scripts — network-proxy profiles for AI/inference en
 
    Commands whose credential env var isn't set are skipped (shown commented-out in dry-run mode).
 
-5. **Use OpenShell** — route `curl`, `opencode`, etc. through the configured gateway/providers.
+5. **Use OpenShell** - route `curl`, `opencode`, etc. through the configured gateway/providers.
 
 6. **Clean up** when you're done (dry-run first, then execute):
 
@@ -74,7 +74,7 @@ Generates `openshell provider create --name <provider> --type <type> [--credenti
 The credential flag is only added when the profile declares an env var, and the command is **skipped** if that env var isn't set in your environment:
 
 - **Dry-run (default):** the command is printed commented out, with an inline skip reason (`# skipped: environment variable ... is not set`).
-- **`--execute` mode:** a warning is shown and execution continues to the next command — one missing env var never aborts the whole run.
+- **`--execute` mode:** a warning is shown and execution continues to the next command - one missing env var never aborts the whole run.
 
 In short: **if the related system environment variable is not found, the provider is not created.** Set the key first, then re-run.
 
@@ -235,14 +235,14 @@ Use `--global` to target platform-scoped providers/profiles instead of user-scop
 
 Each profile YAML declares:
 
-- `id` / `display_name` / `description` — identifying metadata.
-- `category` / `inference_capable` — profile type (typically `inference: true`).
-- `credentials` — name, description, `env_vars`, `required`, `auth_style`, `header_name`.
-- `endpoints` — host, port, path, protocol, access, enforcement, and which credentials apply.
-- `binaries` — which binaries are allowed to use this profile.
+- `id` / `display_name` / `description` - identifying metadata.
+- `category` / `inference_capable` - profile type (typically `inference: true`).
+- `credentials` - name, description, `env_vars`, `required`, `auth_style`, `header_name`.
+- `endpoints` - host, port, path, protocol, access, enforcement, and which credentials apply.
+- `binaries` - which binaries are allowed to use this profile.
 
 See any file in `profiles/` for a concrete example.
 
 ## License
 
-MIT — see `LICENSE`.
+MIT - see `LICENSE`.
