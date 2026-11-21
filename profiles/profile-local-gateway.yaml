@@ -1,4 +1,4 @@
-id: profile-host-docker-internal
+id: profile-local-gateway
 display_name: Gateway (host.docker.internal)
 description: Access to the gateway endpoint (host.docker.internal)
 category: inference
