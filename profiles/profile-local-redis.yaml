@@ -1,0 +1,12 @@
+id: profile-local-redis
+display_name: Local Redis (host.docker.internal)
+description: Access to the redis endpoint (host.docker.internal)
+category: other
+inference_capable: false
+endpoints:
+- host: host.docker.internal
+  port: 6379
+  protocol: tcp
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
