@@ -15,6 +15,4 @@ endpoints:
   port: 6334
   protocol: tcp
 binaries:
-- /usr/local/bin/omniroute
-- /usr/local/bin/node
-- /usr/bin/curl
+- { path: "/**" }

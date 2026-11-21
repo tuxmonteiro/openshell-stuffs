@@ -15,6 +15,4 @@ endpoints:
       method: GET
       path: /v1/**
 binaries:
-- /usr/local/bin/omniroute
-- /usr/local/bin/node
-- /usr/bin/curl
+- { path: "/**" }

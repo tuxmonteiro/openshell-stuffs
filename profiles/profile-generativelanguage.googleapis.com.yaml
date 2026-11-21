@@ -26,3 +26,6 @@ binaries:
 - /usr/local/bin/omniroute
 - /usr/local/bin/node
 - /usr/bin/curl
+- /home/*/.local/bin/claude
+- /home/*/.local/bin/opencode
+- /home/*/.opencode/bin/opencode

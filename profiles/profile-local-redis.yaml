@@ -8,5 +8,4 @@ endpoints:
   port: 6379
   protocol: tcp
 binaries:
-- /usr/local/bin/omniroute
-- /usr/local/bin/node
+- { path: "/**" }
