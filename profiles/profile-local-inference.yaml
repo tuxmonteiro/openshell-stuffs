@@ -1,0 +1,17 @@
+id: profile-local-inference
+display_name: Local LLM Server
+description: Access to local LLM server endpoint
+category: inference
+inference_capable: true
+endpoints:
+- port: 18080
+  path: /**
+  protocol: rest
+  access: read-write
+  enforcement: audit
+  allow_uninspected_credentials: true
+  allowed_ips:
+    - "0.0.0.0/0"
+
+binaries:
+- { path: "/**" }
