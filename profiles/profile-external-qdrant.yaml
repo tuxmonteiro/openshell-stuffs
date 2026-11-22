@@ -1,0 +1,22 @@
+id: profile-external-qdrant
+display_name: Qdrant Vector Search Engine
+description: Access to the qdrant endpoint
+category: data
+inference_capable: false
+endpoints:
+- port: 6333
+  path: /**
+  protocol: rest
+  access: read-write
+  enforcement: audit
+  allow_uninspected_credentials: true
+  allowed_ips:
+    - "0.0.0.0/0"
+
+- port: 6334
+  protocol: tcp
+  allowed_ips:
+    - "0.0.0.0/0"
+
+binaries:
+- { path: "/**" }
