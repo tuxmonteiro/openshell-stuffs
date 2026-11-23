@@ -11,8 +11,11 @@ endpoints:
   access: read-write
   enforcement: audit
   allow_uninspected_credentials: true
+  tls: skip
   allowed_ips:
+    - "10.0.0.0/8"
+    - "172.16.0.0/12"
+    - "192.160.0.0/16"
     - "0.0.0.0/0"
-
 binaries:
 - { path: "/**" }
