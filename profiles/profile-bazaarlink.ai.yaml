@@ -1,0 +1,30 @@
+id: profile-bazaarlink-ai
+display_name: bazaarlink (bazaarlink.ai)
+description: Access to the bazaarlink endpoint (bazaarlink.ai)
+category: inference
+inference_capable: true
+credentials:
+- name: bazaarlink_api_key
+  description: bazaarlink.ai API key
+  env_vars:
+  - BAZAARLINK_API_KEY
+  required: false
+  auth_style: bearer
+  header_name: authorization
+  query_param: ''
+endpoints:
+- host: bazaarlink.ai
+  port: 443
+  path: /**
+  protocol: rest
+  access: read-write
+  enforcement: enforce
+  credentials:
+  - bazaarlink_api_key
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
+- /usr/bin/curl
+- /home/*/.local/bin/claude
+- /home/*/.local/bin/opencode
+- /home/*/.opencode/bin/opencode

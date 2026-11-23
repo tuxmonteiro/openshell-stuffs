@@ -1,0 +1,30 @@
+id: profile-ai-gateway-vercel-sh
+display_name: ai-gateway vercel (ai-gateway.vercel.sh)
+description: Access to ai-gateway vercel endpoint (ai-gateway.vercel.sh)
+category: inference
+inference_capable: true
+credentials:
+- name: ai_gateway_vercel_api_key
+  description: ai-gateway.vercel.sh API key
+  env_vars:
+  - VERCEL_AI_GATEWAY_API_KEY
+  required: false
+  auth_style: bearer
+  header_name: authorization
+  query_param: ''
+endpoints:
+- host: ai-gateway.vercel.sh
+  port: 443
+  path: /**
+  protocol: rest
+  access: read-write
+  enforcement: enforce
+  credentials:
+  - ai_gateway_vercel_api_key
+binaries:
+- /usr/local/bin/omniroute
+- /usr/local/bin/node
+- /usr/bin/curl
+- /home/*/.local/bin/claude
+- /home/*/.local/bin/opencode
+- /home/*/.opencode/bin/opencode
