@@ -4,7 +4,8 @@ description: Access to local LLM server endpoint
 category: inference
 inference_capable: true
 endpoints:
-- port: 18080
+- host: {{HOST}}
+  port: 18080
   path: /**
   protocol: rest
   access: read-write

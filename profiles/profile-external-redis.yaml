@@ -4,7 +4,8 @@ description: Access to the redis endpoint
 category: other
 inference_capable: false
 endpoints:
-- port: 6379
+- host: {{HOST}}
+  port: 6379
   protocol: tcp
   allowed_ips:
     - "0.0.0.0/0"

@@ -4,7 +4,8 @@ description: Access to the qdrant endpoint
 category: data
 inference_capable: false
 endpoints:
-- port: 6333
+- host: {{HOST}}
+  port: 6333
   path: /**
   protocol: rest
   access: read-write
@@ -13,7 +14,8 @@ endpoints:
   allowed_ips:
     - "0.0.0.0/0"
 
-- port: 6334
+- host: {{HOST}}
+  port: 6334
   protocol: tcp
   allowed_ips:
     - "0.0.0.0/0"
