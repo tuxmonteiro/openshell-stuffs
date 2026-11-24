@@ -3,29 +3,30 @@ display_name: Qdrant Vector Search Engine
 description: Access to the qdrant endpoint
 category: data
 inference_capable: false
+credentials:
+- name: qdrant_api_key
+  description: qdrant API key
+  env_vars:
+  - QDRANT_API_KEY
+  required: true
+  auth_style: bearer
+  header_name: authorization
+  query_param: ''
+
 endpoints:
-- host: {{HOST}}
-  port: 6333
+- host: **.aws.cloud.qdrant.io
+  ports: [443,6333]
   path: /**
   protocol: rest
   access: read-write
   enforcement: audit
-  allow_uninspected_credentials: true
-  tls: skip
-  allowed_ips:
-    - "10.0.0.0/8"
-    - "172.16.0.0/12"
-    - "192.160.0.0/16"
-    - "0.0.0.0/0"
+  credentials:
+  - qdrant_api_key
 
-- host: {{HOST}}
+- host: **.aws.cloud.qdrant.io
   port: 6334
   protocol: tcp
-  allowed_ips:
-    - "10.0.0.0/8"
-    - "172.16.0.0/12"
-    - "192.160.0.0/16"
-    - "0.0.0.0/0"
+  allow_uninspected_credentials: true
 
 binaries:
 - { path: "/**" }
